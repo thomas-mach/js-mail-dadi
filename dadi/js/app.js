@@ -1,28 +1,39 @@
 // creare un numero random da 1 - 6 per computer e giocatore
-const randomNumberComputer = Math.floor(Math.random() * 6) + 1
-const randomNumberPlayer = Math.floor(Math.random() * 6) + 1
-let resultPlayer = 0
-let resultComputer = 0
 
-if (randomNumberComputer > randomNumberPlayer){
-resultComputer++
-console.log(resultPlayer)
-console.log(resultComputer)
-console.log('Copmuter ' + randomNumberComputer)
-console.log('You ' + randomNumberPlayer)
-console.log('Computer WIN! ')
-}
-else if (randomNumberComputer < randomNumberPlayer){
-    resultPlayer++
-    console.log(resultPlayer)
-    console.log(resultComputer)
-    console.log('You ' + randomNumberPlayer)
-    console.log('Copmuter ' + randomNumberComputer)
-    console.log('You WIN!')
+const rollElement = document.getElementById('roll')
+const resultPlayer = document.getElementById('playerResult') 
+const resultComputer = document.getElementById('computerResult')
+const winner = document.getElementById('winner')
+const winsComputer = document.getElementById('winsComputer')
+const winsPlayer = document.getElementById('winsPlayer')
+
+let computerWins = 0
+let playerWins = 0
+
+
+function hendleClick(){
+    const randomNumberComputer = Math.floor(Math.random() * 6) + 1
+    const randomNumberPlayer = Math.floor(Math.random() * 6) + 1
+    resultComputer.innerHTML = randomNumberComputer
+    resultPlayer.innerHTML = randomNumberPlayer
     
-} else {
-    console.log('You ' + randomNumberPlayer)
-    console.log('Copmuter ' + randomNumberComputer)
-    console.log('DRAW')
+    
+    if (randomNumberComputer > randomNumberPlayer){
+        winner.innerHTML = ('COMPUTER WON!')
+        computerWins++
+    }
+    else if (randomNumberComputer < randomNumberPlayer){
+        winner.innerHTML = ('YOU WON!')
+        playerWins++
+    } else {
+        winner.innerHTML = ('DRAW')
+    }
+
+    winsComputer.innerHTML = computerWins
+    winsPlayer.innerHTML = playerWins
 }
+
+rollElement.addEventListener('click', hendleClick) 
+
+
 

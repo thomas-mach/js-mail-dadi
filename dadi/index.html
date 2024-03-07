@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dadi</title>
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
+
+    <div class="container">
+        <div class="game_title">DICE_GAME</div>
+        <div class="result">
+            <span>Computer</span><span class="computer_result" id="computerResult">0</span>
+            <span>Player</span> <span class="player_result" id="playerResult">0</span>
+        </div>
+        <div class="button">
+            <input type="submit" value="ROLL" id="roll">
+        </div>
+        <div id="winner" class="winner"></div>
+        <div>
+            <div><span>Computer wins: </span><span id="winsComputer"></span></div> 
+            <div><span>Player wins: </span><span id="winsPlayer"></span></div> 
+        </div>
+        
+    </div>
     <script src="./js/app.js"></script>
 </body>
 </html>
